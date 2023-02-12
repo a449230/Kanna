@@ -103,7 +103,7 @@ public func HTML(html: Data, url: String? = nil, encoding: String.Encoding, opti
 // NSData  UTF8
 public func HTMLUTF8(html: Data, url: String? = nil, option: ParseOption = kDefaultHtmlParseOption) throws -> HTMLDocument {
     
-    return try HTML(html: String(decoding: html, as: UTF8.self), url: url, encoding: encoding, option: option)
+    return try HTML(html: String(decoding: html, as: UTF8.self), url: url, encoding: .utf8, option: option)
 }
 // NSURL
 public func HTML(url: URL, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) throws -> HTMLDocument {
