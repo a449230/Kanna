@@ -100,7 +100,11 @@ public func HTML(html: Data, url: String? = nil, encoding: String.Encoding, opti
     }
     return try HTML(html: htmlStr, url: url, encoding: encoding, option: option)
 }
-
+// NSData  UTF8
+public func HTMLUTF8(html: Data, url: String? = nil, option: ParseOption = kDefaultHtmlParseOption) throws -> HTMLDocument {
+    
+    return try HTML(html: String(decoding: resultData, as: UTF8.self), url: url, encoding: encoding, option: option)
+}
 // NSURL
 public func HTML(url: URL, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) throws -> HTMLDocument {
     guard let data = try? Data(contentsOf: url) else {
